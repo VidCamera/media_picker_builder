@@ -54,9 +54,9 @@ class _MyAppState extends State<MyApp> {
                 onPressed: () {
                   _checkPermission().then((granted) {
                     if (!granted) return;
-                    MediaPickerBuilder.getVideosAndLivePhotos(
-                      dateInMs: DateTime.now().millisecondsSinceEpoch,
-                      durationInSeconds: 1,
+                    MediaPickerBuilder.getMediaAssets(
+                      start: DateTime(2021, 1, 22),
+                      end: DateTime(2021, 1, 30),
                     ).then((albums) {
                       print(albums);
                     });
