@@ -142,7 +142,7 @@ class MediaPickerBuilderPlugin(private val context: Context) : MethodCallHandler
                             }
                     mediaAssets.addAll(filteredMediaAssets)
                 }
-
+                mediaAssets.sortByDescending(MediaAsset::dateAdded)
                 result.success(JSONArray(mediaAssets.map { it.toJSONObject() }).toString())
             }
             "v2/getMediaFile" -> {
